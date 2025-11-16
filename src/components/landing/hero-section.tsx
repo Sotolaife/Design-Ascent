@@ -19,6 +19,17 @@ export default function HeroSection() {
             <p className="mt-6 text-lg max-w-xl mx-auto lg:mx-0 text-muted-foreground sm:text-xl">
               Join our exclusive, 100% free graphics design class and discover the secrets to creating premium visuals that attract high-paying clients.
             </p>
+
+            <div className="mt-8 mx-auto lg:mx-0 max-w-xl aspect-video relative rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://player.cloudinary.com/embed/?cloud_name=dwdbq6pt7&public_id=VID-20251111-WA0017_fsq1nc&profile=cld-default"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+              ></iframe>
+            </div>
+
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto text-lg py-7 px-10">
                 <Link href="#register">Register For the Free Class Now</Link>
