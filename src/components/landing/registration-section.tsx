@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { registerForClass } from "@/app/actions";
@@ -24,12 +25,12 @@ function SubmitButton() {
 }
 
 export default function RegistrationSection() {
-  const [state, formAction] = useFormState(registerForClass, initialState);
+  const [state, formAction] = useActionState(registerForClass, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
     if (state.message) {
-      if (Object.keys(state.errors).length > 0) {
+      if (state.errors && Object.keys(state.errors).length > 0) {
         toast({
           title: "Oops! Something went wrong.",
           description: state.message,
