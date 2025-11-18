@@ -8,10 +8,10 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <PenTool className="h-6 w-6 text-primary" />
-          <span className="font-headline text-xl font-bold">Design Ascent</span>
+          <span className="font-headline text-lg sm:text-xl font-bold">Design Ascent</span>
         </Link>
-        <Button asChild className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90">
-          <Link href="#register">Register Free Now</Link>
+        <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 sm:size-auto sm:px-4 sm:py-2">
+          <Link href="#register">Register Free</Link>
         </Button>
       </div>
     </header>
