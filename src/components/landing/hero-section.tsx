@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="font-headline text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-6xl">
+            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
               Learn the High-Income Skill Big Brands Pay For
             </h1>
             <p className="mt-6 text-lg max-w-xl mx-auto lg:mx-0 text-muted-foreground sm:text-xl">
@@ -36,7 +36,7 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center row-start-1 lg:row-start-auto">
+          <div className="flex justify-center lg:row-start-1 lg:col-start-2">
             {instructorImage && (
               <Card className="rounded-xl shadow-2xl overflow-hidden max-w-xs w-full mx-auto group">
                 <div className="relative">
