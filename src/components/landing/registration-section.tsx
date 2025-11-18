@@ -47,7 +47,7 @@ export default function RegistrationSection() {
   return (
     <section id="register" className="py-12 sm:py-16 lg:py-20 bg-primary/5">
       <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto">
+        <div className="mx-auto max-w-xl">
           <Card className="shadow-2xl">
             <CardHeader className="text-center">
               <CardTitle className="font-headline text-3xl font-bold">
