@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card } from "@/components/ui/card";
-import React from "react";
 
 export default function HeroSection() {
   const instructorImage = PlaceHolderImages.find(img => img.id === 'instructor-portrait');
@@ -37,7 +36,7 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center row-start-1 lg:row-start-auto">
             {instructorImage && (
               <Card className="rounded-xl shadow-2xl overflow-hidden max-w-sm mx-auto group">
                 <div className="relative">
