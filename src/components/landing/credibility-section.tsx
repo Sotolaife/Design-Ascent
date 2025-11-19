@@ -3,14 +3,12 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const brandLogos = [
-  { name: "Adesina Assets", imageUrl: "https://picsum.photos/seed/adesina/140/70" },
-  { name: "Ambience Reality", imageUrl: "https://picsum.photos/seed/ambience/140/70" },
-  { name: "Folda", imageUrl: "https://picsum.photos/seed/folda/140/70" },
-  { name: "Evimero", imageUrl: "https://picsum.photos/seed/evimero/140/70" },
-  { name: "Property Evangelist", imageUrl: "https://picsum.photos/seed/property/140/70" },
-  { name: "Graycourt Attorney", imageUrl: "https://picsum.photos/seed/graycourt/140/70" },
-  { name: "Motlead Projects", imageUrl: "https://picsum.photos/seed/motlead/140/70" },
-  { name: "Creativity Niche Studios", imageUrl: "https://picsum.photos/seed/creativity/140/70" }
+  { name: "Ambience Reality", imageUrl: "https://i.ibb.co/YBWjcBqL/AMBIENCE-REALTY-Black.png" },
+  { name: "Creativity Niche Studios", imageUrl: "https://i.ibb.co/7tfw6c3m/Creativity-Niche-Studios.png" },
+  { name: "Graycourt Attorney", imageUrl: "https://i.ibb.co/K8djjSm/Asset-4.png" },
+  { name: "Goldfort Consultancy", imageUrl: "https://i.ibb.co/WNyvm3nz/Asset-6.png" },
+  { name: "Property Evangelist Limited", imageUrl: "https://i.ibb.co/4nhsk1Md/Asset-1-300x.png" },
+  { name: "Evimero Managerial Consult", imageUrl: "https://i.ibb.co/HT9GVyZM/20251113-100343.png" },
 ];
 
 export default function CredibilitySection() {
