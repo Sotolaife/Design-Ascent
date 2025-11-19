@@ -10,7 +10,7 @@ export default function Header() {
           <PenTool className="h-6 w-6 text-primary" />
           <span className="font-headline text-lg sm:text-xl font-bold">Design Ascent</span>
         </Link>
-        <Button asChild size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90 sm:size-auto sm:px-4 sm:py-2">
+        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
           <Link href="#register">Register Free</Link>
         </Button>
       </div>

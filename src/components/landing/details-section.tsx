@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Video, Laptop, BarChart3 } from "lucide-react";
+import { Calendar, Video, Laptop, BarChart3 } from "lucide-react";
 
 const details = [
     {
@@ -42,11 +42,11 @@ export default function DetailsSection() {
                         <CardContent className="p-6 sm:p-8">
                             <ul className="space-y-6">
                                 {details.map((detail, index) => (
-                                    <li key={index} className="flex items-start gap-4">
+                                    <li key={index} className="flex flex-col sm:flex-row items-start gap-4">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
                                             {detail.icon}
                                         </div>
-                                        <div className="flex-grow">
+                                        <div className="flex-grow mt-2 sm:mt-0">
                                             <p className="font-semibold text-lg">{detail.label}</p>
                                             <p className="text-muted-foreground">{detail.value}</p>
                                         </div>

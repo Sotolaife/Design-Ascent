@@ -7,10 +7,10 @@ export default function CredibilitySection() {
   return (
     <section id="credibility" className="py-12 sm:py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
           <div className="space-y-4">
             <Card className="bg-card">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 p-4 sm:p-6">
                 <div className="bg-primary p-3 rounded-md">
                   <Briefcase className="h-6 w-6 text-primary-foreground" />
                 </div>
@@ -18,7 +18,7 @@ export default function CredibilitySection() {
                   Creative Director at Adesina Assets
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 pt-0 sm:p-6 sm:pt-0">
                 <p className="text-muted-foreground">
                   Leading creative strategy and design execution for a portfolio of high-growth brands and innovative projects.
                 </p>
@@ -27,7 +27,7 @@ export default function CredibilitySection() {
           </div>
           <div className="space-y-4">
             <Card className="bg-card">
-              <CardHeader className="flex flex-row items-center gap-4">
+              <CardHeader className="flex flex-row items-center gap-4 p-4 sm:p-6">
                 <div className="bg-primary p-3 rounded-md">
                   <Award className="h-6 w-6 text-primary-foreground" />
                 </div>
@@ -35,7 +35,7 @@ export default function CredibilitySection() {
                   Multi-Million Naira Impact
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-4 pt-0 sm:p-6 sm:pt-0">
                 <p className="text-muted-foreground">
                   Worked with top brands, crafting campaigns and brand identities that have generated multi-millions in revenue.
                 </p>

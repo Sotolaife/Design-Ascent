@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-primary/5"></div>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left row-start-2 lg:row-start-1">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
               Learn the High-Income Skill Big Brands Pay For
             </h1>
@@ -34,7 +34,7 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="row-start-1 lg:row-start-auto flex justify-center">
+          <div className="flex justify-center row-start-1 lg:row-start-auto">
             {instructorImage && (
               <Card className="rounded-xl shadow-2xl overflow-hidden max-w-xs w-full mx-auto group">
                 <div className="relative">
