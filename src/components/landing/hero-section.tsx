@@ -8,12 +8,12 @@ export default function HeroSection() {
   const instructorImage = PlaceHolderImages.find(img => img.id === 'instructor-portrait');
 
   return (
-    <section id="hero" className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section id="hero" className="w-full relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 bg-primary/5"></div>
-      <div className="container mx-auto px-4 relative">
+      <div className="container w-full mx-auto flex flex-row justify-center align-middle px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+          <div className="flex flex-col justify-center align-middle items-center text-center">
+            <h1 className="font-headline items-center text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
               Learn the High-Income Skill Big Brands Pay For
             </h1>
             <p className="mt-6 text-lg max-w-xl text-muted-foreground sm:text-xl">
