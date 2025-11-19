@@ -34,7 +34,7 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center row-start-1 lg:row-start-auto">
+          <div className="flex justify-center">
             {instructorImage && (
               <Card className="rounded-xl shadow-2xl overflow-hidden max-w-xs w-full mx-auto group">
                 <div className="relative">
