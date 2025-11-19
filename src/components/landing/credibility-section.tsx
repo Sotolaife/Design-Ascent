@@ -1,15 +1,16 @@
 import { Award, Briefcase } from "lucide-react";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const brandLogos = [
-  "Adesina Assets", 
-  "Ambience Reality", 
-  "Folda", 
-  "Evimero", 
-  "Property Evangelist", 
-  "Graycourt Attorney", 
-  "Motlead Projects", 
-  "Creativity Niche Studios"
+  { name: "Adesina Assets", imageUrl: "https://picsum.photos/seed/adesina/140/70" },
+  { name: "Ambience Reality", imageUrl: "https://picsum.photos/seed/ambience/140/70" },
+  { name: "Folda", imageUrl: "https://picsum.photos/seed/folda/140/70" },
+  { name: "Evimero", imageUrl: "https://picsum.photos/seed/evimero/140/70" },
+  { name: "Property Evangelist", imageUrl: "https://picsum.photos/seed/property/140/70" },
+  { name: "Graycourt Attorney", imageUrl: "https://picsum.photos/seed/graycourt/140/70" },
+  { name: "Motlead Projects", imageUrl: "https://picsum.photos/seed/motlead/140/70" },
+  { name: "Creativity Niche Studios", imageUrl: "https://picsum.photos/seed/creativity/140/70" }
 ];
 
 export default function CredibilitySection() {
@@ -57,14 +58,17 @@ export default function CredibilitySection() {
           <h3 className="text-lg font-semibold tracking-wider text-primary uppercase font-headline">
             Trusted by Industry Leaders
           </h3>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:gap-x-12">
             {brandLogos.map((brand) => (
-              <span
-                key={brand}
-                className="font-headline text-xl font-bold text-muted-foreground/60 transition-colors hover:text-foreground"
-              >
-                {brand}
-              </span>
+              <div key={brand.name} className="relative h-12 w-32 grayscale opacity-60 transition-all hover:grayscale-0 hover:opacity-100">
+                <Image
+                  src={brand.imageUrl}
+                  alt={`${brand.name} logo`}
+                  layout="fill"
+                  objectFit="contain"
+                  data-ai-hint="brand logo"
+                />
+              </div>
             ))}
           </div>
         </div>
