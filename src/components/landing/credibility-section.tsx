@@ -1,7 +1,16 @@
 import { Award, Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const brandLogos = ["NEXUS", "AURA", "ZENITH", "ORION", "CELESTIA"];
+const brandLogos = [
+  "Adesina", 
+  "Ambience Reality", 
+  "Folda", 
+  "Evimero", 
+  "Property Evangelist", 
+  "Graycourt Attorney", 
+  "Motlead Projects", 
+  "Creativity Niche Studios"
+];
 
 export default function CredibilitySection() {
   return (
@@ -52,7 +61,7 @@ export default function CredibilitySection() {
             {brandLogos.map((brand) => (
               <span
                 key={brand}
-                className="font-headline text-2xl font-bold text-muted-foreground/60 transition-colors hover:text-foreground"
+                className="font-headline text-xl font-bold text-muted-foreground/60 transition-colors hover:text-foreground"
               >
                 {brand}
               </span>
