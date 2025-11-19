@@ -2,7 +2,7 @@ import { Award, Briefcase } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const brandLogos = [
-  "Adesina", 
+  "Adesina Assets", 
   "Ambience Reality", 
   "Folda", 
   "Evimero", 
