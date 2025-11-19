@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="w-full relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 bg-primary/5"></div>
-      <div className="container mx-auto px-4">
+      <div className="container flex flex row align-middle justify-center px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h1 className="font-headline text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">

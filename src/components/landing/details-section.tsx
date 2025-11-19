@@ -6,7 +6,7 @@ const details = [
     {
         icon: <Calendar className="w-6 h-6 text-primary" />,
         label: "Date & Time",
-        value: "Saturday, August 24th, 2024 at 7 PM (WAT)",
+        value: "December 15, 2025 at 7 PM (WAT)",
     },
     {
         icon: <Video className="w-6 h-6 text-primary" />,
