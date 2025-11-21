@@ -21,6 +21,10 @@ const transformations = [
         title: "Meet Brand-Level Expectations",
         description: "Discover what it takes to deliver work that top brands will approve and admire."
     },
+    {
+        title: "Access to job offers from all over the world",
+        description: "Get updates on open jobs in and outside of Nigeria"
+    },
 ]
 
 export default function TransformationSection() {
