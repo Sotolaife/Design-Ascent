@@ -1,21 +1,21 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { PenTool, Target, Laptop, DollarSign, Lightbulb, Users } from "lucide-react";
+import { PenTool, Target, Laptop, DollarSign, Lightbulb, Users, Video } from "lucide-react";
 
 const curriculumItems = [
   {
     icon: <PenTool className="w-8 h-8 text-primary" />,
-    title: "Fundamentals of Premium Design",
-    description: "Master the core principles that separate amateur work from professional, high-value designs.",
+    title: "Fundamentals of Creative Storytelling",
+    description: "Master the core principles of creative visual storytelling that separates amateur from professionals.",
   },
   {
     icon: <Laptop className="w-8 h-8 text-primary" />,
-    title: "How to Design Like a Professional",
-    description: "Learn workflows, tools, and techniques used by creative directors in top agencies.",
+    title: "Basic Principles of Design",
+    description: "Learn the foundational principles of design to create visually appealing compositions.",
   },
   {
-    icon: <Users className="w-8 h-8 text-primary" />,
-    title: "How Real Businesses Use Design",
-    description: "Go behind the scenes to see how design drives business goals and revenue.",
+    icon: <Video className="w-8 h-8 text-primary" />,
+    title: "How to Tell a Story Through Designing and Video Editing That Sells",
+    description: "Go behind the scenes to see how design and video drive business goals and revenue.",
   },
   {
     icon: <Target className="w-8 h-8 text-primary" />,
