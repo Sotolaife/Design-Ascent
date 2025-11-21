@@ -37,9 +37,9 @@ export default function HeroSection() {
             <video
               className="absolute top-0 left-0 w-full h-full object-cover"
               src="https://res.cloudinary.com/dwdbq6pt7/video/upload/q_auto:good,f_auto/VID-20251111-WA0017_fsq1nc.mp4"
-              autoPlay
+              autoPlay={true}
               muted={false}
-              playsInline
+              playsInline={true}
               loop
               controls
             />
