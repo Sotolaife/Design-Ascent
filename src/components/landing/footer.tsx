@@ -9,9 +9,10 @@ export default function Footer() {
             <Image
               src="https://i.ibb.co/DDwd0dLh/IMG-20251121-WA0006.jpg"
               alt="Olutola Studios Logo"
-              width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
+              unoptimized
             />
             <span className="font-headline text-xl font-bold">Olutola Studios</span>
           </div>

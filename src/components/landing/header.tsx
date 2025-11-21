@@ -13,12 +13,15 @@ export default function Header() {
             width={40}
             height={40}
             className="h-10 w-10 object-contain"
+            unoptimized
           />
           <span className="font-headline text-lg sm:text-xl font-bold">Olutola Studios</span>
         </Link>
-        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
-          <Link href="#register">Register Free</Link>
-        </Button>
+        <Link href="#register" legacyBehavior passHref>
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
+            <a>Register Free</a>
+          </Button>
+        </Link>
       </div>
     </header>
   );
