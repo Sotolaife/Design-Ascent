@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Design Ascent',
+  title: 'Olutola Studios',
   description: 'Learn the High-Income Skill Big Brands Pay For — Free Graphics Design Class',
 };
 

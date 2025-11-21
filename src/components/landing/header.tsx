@@ -1,14 +1,20 @@
 import Link from "next/link";
-import { PenTool } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <PenTool className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg sm:text-xl font-bold">Design Ascent</span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="https://i.ibb.co/DDwd0dLh/IMG-20251121-WA0006.jpg"
+            alt="Olutola Studios Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          <span className="font-headline text-lg sm:text-xl font-bold">Olutola Studios</span>
         </Link>
         <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
           <Link href="#register">Register Free</Link>
