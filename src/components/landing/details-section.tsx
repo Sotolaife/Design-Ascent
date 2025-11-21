@@ -1,12 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Video, Laptop, BarChart3 } from "lucide-react";
+import { Calendar, Video, Laptop, BarChart3, Clock } from "lucide-react";
 
 const details = [
     {
         icon: <Calendar className="w-6 h-6 text-primary" />,
-        label: "Date & Time",
-        value: "December 15, 2025 at 7 PM (WAT)",
+        label: "Date",
+        value: "December 5th - 10th, 2025",
+    },
+    {
+        icon: <Clock className="w-6 h-6 text-primary" />,
+        label: "Duration",
+        value: "5 Days of intensive learning.",
     },
     {
         icon: <Video className="w-6 h-6 text-primary" />,
@@ -16,7 +21,7 @@ const details = [
     {
         icon: <Laptop className="w-6 h-6 text-primary" />,
         label: "What You'll Need",
-        value: "Just your smartphone or laptop. No special software required.",
+        value: "A laptop is recommended, but you can join with a smartphone. No special software required.",
     },
     {
         icon: <BarChart3 className="w-6 h-6 text-primary" />,
