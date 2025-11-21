@@ -20,12 +20,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-              Join our exclusive,
-              <span className="font-semibold text-primary">
-                {" "}100% free graphics design class{" "}
-              </span>
-              and discover the secrets to creating premium visuals that attract
-              high-paying clients.
+              Join my exclusive, 100% free creative masterclass to discover the secret of creating premium visual stories that attracts high-paying clients
             </p>
 
 
