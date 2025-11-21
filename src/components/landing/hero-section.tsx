@@ -1,8 +1,55 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Force play with multiple attempts
+      const playVideo = async () => {
+        try {
+          await video.play();
+        } catch (error) {
+          console.log("Autoplay prevented, retrying with muted...");
+          // If autoplay fails, try with muted first
+          video.muted = true;
+          try {
+            await video.play();
+            // Once playing, unmute after a short delay
+            setTimeout(() => {
+              video.muted = false;
+            }, 100);
+          } catch (e) {
+            console.error("Video autoplay failed:", e);
+          }
+        }
+      };
+
+      playVideo();
+
+      // Retry play on user interaction if autoplay failed
+      const handleInteraction = () => {
+        if (video.paused) {
+          video.play().catch(e => console.error("Play on interaction failed:", e));
+        }
+      };
+
+      document.addEventListener("click", handleInteraction, { once: true });
+      document.addEventListener("touchstart", handleInteraction, { once: true });
+
+      return () => {
+        document.removeEventListener("click", handleInteraction);
+        document.removeEventListener("touchstart", handleInteraction);
+      };
+    }
+  }, []);
+  
   return (
     <section
       id="hero"
@@ -35,6 +82,7 @@ export default function HeroSection() {
           {/* VIDEO */}
           <div className="mt-6 sm:mt-8 lg:mt-4 w-full aspect-video relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-primary/10 bg-black">
             <video
+              ref={videoRef}
               className="absolute top-0 left-0 w-full h-full object-cover"
               src="https://res.cloudinary.com/dwdbq6pt7/video/upload/q_auto:good,f_auto/VID-20251111-WA0017_fsq1nc.mp4"
               autoPlay={true}
@@ -42,6 +90,7 @@ export default function HeroSection() {
               playsInline={true}
               loop
               controls
+              preload="auto"
             />
           </div>
         </div>
