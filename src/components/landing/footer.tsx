@@ -11,7 +11,7 @@ export default function Footer() {
               alt="Olutola Studios Logo"
               width={24}
               height={24}
-              className="h-6 w-6 rounded-full object-cover"
+              className="h-6 w-6 object-contain"
             />
             <span className="font-headline text-xl font-bold">Olutola Studios</span>
           </div>
