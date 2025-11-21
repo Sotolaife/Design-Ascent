@@ -17,11 +17,9 @@ export default function Header() {
           />
           <span className="font-headline text-lg sm:text-xl font-bold">Olutola Studios</span>
         </Link>
-        <Link href="#register" legacyBehavior passHref>
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
-            <a>Register Free</a>
-          </Button>
-        </Link>
+        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 px-4 py-2">
+          <Link href="#register">Register Free</Link>
+        </Button>
       </div>
     </header>
   );
