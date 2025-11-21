@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const brandLogos = [
-  { name: "Ambience Reality", imageUrl: "https://i.ibb.co/YBWjcBqL/AMBIENCE-REALTY-Black.png" },
+  { name: "Adesina Assets", imageUrl: "https://i.ibb.co/j96p6gjZ/Logo-Black-Landscape.png" },
   { name: "Creativity Niche Studios", imageUrl: "https://i.ibb.co/7tfw6c3m/Creativity-Niche-Studios.png" },
-  { name: "Graycourt Attorney", imageUrl: "https://i.ibb.co/K8djjSm/Asset-4.png" },
-  { name: "Goldfort Consultancy", imageUrl: "https://i.ibb.co/WNyvm3nz/Asset-6.png" },
+  { name: "Folda", imageUrl: "https://i.ibb.co/C3cV2fNZ/transparent-folda.png" },
+  { name: "SamuelJohn Films", imageUrl: "https://i.ibb.co/B57gmqds/Samuel-John-Films-White.png" },
   { name: "Property Evangelist Limited", imageUrl: "https://i.ibb.co/4nhsk1Md/Asset-1-300x.png" },
   { name: "Evimero Managerial Consult", imageUrl: "https://i.ibb.co/HT9GVyZM/20251113-100343.png" },
 ];
