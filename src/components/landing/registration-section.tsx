@@ -4,20 +4,69 @@ import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { registerForClass } from "@/app/actions";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { G_FORM_URL, WHATSAPP_URL } from "@/app/config";
+
+interface ErrorState {
+  name?: string[];
+  email?: string[];
+  phone?: string[];
+}
 
 const initialState = {
   message: "",
-  errors: {},
+  errors: {} as ErrorState,
 };
+
+async function handleSubmission() {
+  const form = document.querySelector("form") as HTMLFormElement | null;
+  if (!form) return;
+
+  const formData = new FormData(form);
+  const name = (formData.get("name") as string) || "";
+  const email = (formData.get("email") as string) || "";
+  const phone = (formData.get("phone") as string) || "";
+
+  // Map these to your Google Form entry IDs
+  const googleData = new FormData();
+  googleData.append("entry.761600090", name);
+  googleData.append("entry.1379734406", email);
+  googleData.append("entry.1057380991", phone);
+
+  try {
+    await fetch(G_FORM_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: googleData,
+    });
+  } catch (error) {
+    console.error("Google Form submission error:", error);
+  }
+
+  // Redirect to WhatsApp
+  window.location.href = WHATSAPP_URL;
+}
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+
   return (
-    <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={pending}>
+    <Button
+      type="button"
+      onClick={handleSubmission}
+      className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+      size="lg"
+      disabled={pending}
+    >
       {pending ? "Securing Your Spot..." : "Join the Free Class"}
     </Button>
   );
@@ -54,26 +103,59 @@ export default function RegistrationSection() {
                 Reserve Your Spot — It’s 100% Free
               </CardTitle>
               <CardDescription className="text-lg">
-                Limited slots available — secure yours now to unlock your creative potential.
+                Limited slots available — secure yours now to unlock your
+                creative potential.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form action={formAction} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" name="name" placeholder="e.g. John Doe" required />
-                  {state.errors?.name && <p className="text-sm text-destructive">{state.errors.name[0]}</p>}
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="e.g. John Doe"
+                    required
+                  />
+                  {state.errors.name && (
+                    <p className="text-sm text-destructive">
+                      {state.errors.name[0]}
+                    </p>
+                  )}
                 </div>
+
                 <div className="space-y-2">
                   <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" name="email" type="email" placeholder="you@example.com" required />
-                  {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                  {state.errors.email && (
+                    <p className="text-sm text-destructive">
+                      {state.errors.email[0]}
+                    </p>
+                  )}
                 </div>
+
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" name="phone" type="tel" placeholder="Your phone number" required />
-                  {state.errors?.phone && <p className="text-sm text-destructive">{state.errors.phone[0]}</p>}
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Your phone number"
+                    required
+                  />
+                  {state.errors.phone && (
+                    <p className="text-sm text-destructive">
+                      {state.errors.phone[0]}
+                    </p>
+                  )}
                 </div>
+
                 <SubmitButton />
               </form>
             </CardContent>
