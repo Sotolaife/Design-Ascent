@@ -14,7 +14,15 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { G_FORM_URL, WHATSAPP_URL } from "@/app/config";
+import { WHATSAPP_URL } from "@/app/config";
+
+// Add global type for ttq if not exists or ignore for now, 
+// strictly speaking we should just use window as any or extend Window interface.
+declare global {
+  interface Window {
+    ttq: any;
+  }
+}
 
 interface ErrorState {
   name?: string[];
@@ -25,44 +33,15 @@ interface ErrorState {
 const initialState = {
   message: "",
   errors: {} as ErrorState,
+  success: false,
 };
-
-async function handleSubmission() {
-  const form = document.querySelector("form") as HTMLFormElement | null;
-  if (!form) return;
-
-  const formData = new FormData(form);
-  const name = (formData.get("name") as string) || "";
-  const email = (formData.get("email") as string) || "";
-  const phone = (formData.get("phone") as string) || "";
-
-  // Map these to your Google Form entry IDs
-  const googleData = new FormData();
-  googleData.append("entry.761600090", name);
-  googleData.append("entry.1379734406", email);
-  googleData.append("entry.1057380991", phone);
-
-  try {
-    await fetch(G_FORM_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: googleData,
-    });
-  } catch (error) {
-    console.error("Google Form submission error:", error);
-  }
-
-  // Redirect to WhatsApp
-  window.location.href = WHATSAPP_URL;
-}
 
 function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
     <Button
-      type="button"
-      onClick={handleSubmission}
+      type="submit"
       className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
       size="lg"
       disabled={pending}
@@ -78,16 +57,29 @@ export default function RegistrationSection() {
 
   useEffect(() => {
     if (state.message) {
-      if (state.errors && Object.keys(state.errors).length > 0) {
+      if (state.success) {
+        toast({
+          title: "Success!",
+          description: state.message,
+        });
+
+        // TikTok Event Tracking
+        if (window.ttq) {
+          window.ttq.track('CompleteRegistration', {
+            content_name: 'Brand Design Masterclass',
+            value: 0, // Since it is a free class
+            currency: 'USD',
+          });
+        }
+
+        // Redirect to WhatsApp
+        window.location.href = WHATSAPP_URL;
+
+      } else if (state.errors && Object.keys(state.errors).length > 0) {
         toast({
           title: "Oops! Something went wrong.",
           description: state.message,
           variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: state.message,
         });
       }
     }
